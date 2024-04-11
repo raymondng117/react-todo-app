@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  api:
+    build:
+      context: ./api      # Path to the directory containing Dockerfile for API
+      dockerfile: Dockerfile   # Specify the Dockerfile for API
+    ports:
+      - "8080"
+    # networks:
+    #   - todoapp
+
+  react-todo-app:
+    build:
+      context: ./react-todo-app  # Path to the directory containing Dockerfile for frontend (if separate)
+      dockerfile: Dockerfile  # Specify the Dockerfile for frontend
+    ports:
+      - "3000"  # Adjust the port as per your React app's configuration
+    depends_on:
+      - api
+    # networks:
+    #   - todoapp
+
+# networks:
+#   todoapp:
+

@@ -1,0 +1,36 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Ignore .env files in the root directory
+*.env
+
+# Ignore .env files in specific directories
+api.js/.env
+react-todo-app/.env
+
+# Ignore node_modules directories
+api.js/node_modules
+react-todo-app/node_modules
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+.env
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
