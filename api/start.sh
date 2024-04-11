@@ -6,7 +6,7 @@ source "$(dirname "$0")/.env"
 ngrok config add-authtoken $NGROK_API_APPLICATION_TOKEN
 
 # Run your Node.js application in the background
-node pi-mariadb-todo-api.js &
+node api.js &
 
 # Wait for the application to start
 sleep 5

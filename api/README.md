@@ -1,3 +1,4 @@
+Opional!!! Below are instructions to exam if the API server successfully run in the docker container
 <!-- In contrast to using docker-compose up, when create indiviudal image using Dockerfile, add it to the dockerfile-->
 # Expose port 8080
 EXPOSE 8080
@@ -12,7 +13,7 @@ docker images
 docker run -d react-todoapp-api
 
 
-<!-- below is optional and check all in the docker desktop -->
+Optional coz you can check all logs in the docker desktop if you dont want to use commands
 <!-- check running contianers to get container ID -->
 docker ps (or just head to docker desktop)
 
