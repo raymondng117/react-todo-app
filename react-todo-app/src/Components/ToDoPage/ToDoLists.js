@@ -196,6 +196,8 @@ const ToDoLists = ({ userid, localURL, apiURL }) => {
                         {addListErr && <div className="text-danger">{addListErr}</div>}
                     </div>
                 </div>
+
+                {/* items */}
                 <div className="todo-items-wrapper">
                     <ToDoItems className="todo-item" userid={userid} selectedList={selectedList} localURL={localURL} apiURL={apiURL} 
                     sendSelectedItemToParent={handleSelectedItemFromChild}
@@ -203,6 +205,7 @@ const ToDoLists = ({ userid, localURL, apiURL }) => {
                     />
                 </div>
 
+                {/* editItem */}
                 <div className={`edit-item-wrapper ${!selectedItemFromChild && 'd-flex'} align-items-center justify-content-center`}>
                     <EditToDoItems localURL={localURL} apiURL={apiURL}
                     sendUpdatedItemFromChild = {handleUpdatedItemFromChild}

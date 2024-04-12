@@ -70,7 +70,6 @@ const EditToDoItems = ({ selectedItem, apiURL, sendUpdatedItemFromChild, selecte
 
     async function GetToDoItemById(itemid) {
         if (itemid) {
-            console.log(`${URL}/todoitem/${itemid}`);
             await fetch(`${URL}/todoitem/${itemid}`, {
                 method: "GET",
                 headers: {
@@ -83,8 +82,6 @@ const EditToDoItems = ({ selectedItem, apiURL, sendUpdatedItemFromChild, selecte
                     throw new Error('Failed to fetch the item');
                 }
             }).then(selectedItem => {
-                //setEditing(true);
-                setChangedList(false);
                 setFormData({
                     item_name: selectedItem[0].item_name,
                     status: selectedItem[0].status,
@@ -99,6 +96,7 @@ const EditToDoItems = ({ selectedItem, apiURL, sendUpdatedItemFromChild, selecte
                         complete_date: parseDate(selectedItem[0].complete_date)
                     }
                 )
+                setChangedList(false);
             }).catch(error => {
                 return error;
             })
@@ -157,9 +155,11 @@ const EditToDoItems = ({ selectedItem, apiURL, sendUpdatedItemFromChild, selecte
                         </form>
                     </>
                 ) : (
-                    <div className='d-flex flex-column align-items-center justify-content-center'>
-                        <LuClipboardEdit className='editIcon-item'/>
-                        <h3>Select an item to edit</h3>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <div className='d-flex flex-column align-items-center justify-content-center'>
+                            <LuClipboardEdit className='editIcon-item' />
+                            <h3>Select an item to edit</h3>
+                        </div>
                     </div>
                 )}
         </div >
